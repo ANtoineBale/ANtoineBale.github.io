@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>AB</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#355c4a"/>
+      <stop offset="100%" stop-color="#b7794f"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <path d="M34 94L54 34H74L94 94H78L74 82H54L50 94H34ZM58 70H70L64 49L58 70Z" fill="#f7f4ed"/>
+  <path d="M90 34H98V94H90Z" fill="#f7f4ed"/>
+</svg>

@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Page 404 personnalisée pour toute URL inconnue
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
