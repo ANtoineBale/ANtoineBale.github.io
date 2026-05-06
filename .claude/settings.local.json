@@ -92,7 +92,12 @@
       "Bash(git remote *)",
       "Bash(git checkout *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(git push *)",
+      "mcp__c3c60461-ea39-4de8-ba13-40b309e33a84__search_threads",
+      "mcp__c3c60461-ea39-4de8-ba13-40b309e33a84__get_thread",
+      "Bash(git rm *)"
     ]
   }
 }
