@@ -24,19 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".brand").forEach(function (brand) {
     if (brand.querySelector(".logo-3d")) return; // évite la duplication
 
-    // 1. Création du cube logo 3D
-    const logo = document.createElement("div");
-    logo.className = "logo-3d";
+    // 1. Création de la photo de profil à la place du cube 3D
+    const logo = document.createElement("img");
+    logo.src = "images/photo-antoine.png";
+    logo.alt = "";
+    logo.className = "brand-photo";
     logo.setAttribute("aria-hidden", "true");
-    logo.innerHTML =
-      '<div class="logo-3d-cube">' +
-      '  <div class="logo-3d-face front">AB</div>' +
-      '  <div class="logo-3d-face back">AB</div>' +
-      '  <div class="logo-3d-face right">AB</div>' +
-      '  <div class="logo-3d-face left">AB</div>' +
-      '  <div class="logo-3d-face top">AB</div>' +
-      '  <div class="logo-3d-face bottom">AB</div>' +
-      "</div>";
+    logo.width = 46;
+    logo.height = 46;
 
     // 2. Enveloppement du contenu du brand dans un lien <a> vers l'accueil
     const brandLink = document.createElement("a");

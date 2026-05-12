@@ -201,6 +201,19 @@ header {
   align-self: start;
 }
 
+/* Photo de profil dans le header */
+.brand-photo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--accent);
+  grid-row: 1 / span 2;
+  align-self: center;
+  display: block;
+}
+
 /* Logo 3D AB — cube CSS pur, animé en continu */
 .logo-3d {
   width: 46px;
