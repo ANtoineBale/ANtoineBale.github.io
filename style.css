@@ -661,6 +661,22 @@ body.dark .studio-info-strip span {
   min-width: 0;
 }
 
+.hero-photo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--accent);
+  box-shadow: 0 20px 50px rgba(33, 49, 47, 0.22);
+}
+
 .studio-monogram {
   position: relative;
   display: grid;
@@ -6099,9 +6115,10 @@ body.dark [data-glow]::after {
     animation: none !important;
   }
 
-  /* — Cache le monogramme AB du hero accueil sur mobile — */
-  .studio-monogram {
-    display: none !important;
+  /* — Photo hero sur mobile — taille réduite — */
+  .hero-photo {
+    width: 120px;
+    height: 120px;
   }
 }
 
