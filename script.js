@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     logo.alt = "";
     logo.className = "brand-photo";
     logo.setAttribute("aria-hidden", "true");
-    logo.width = 64;
-    logo.height = 64;
+    logo.width = 80;
+    logo.height = 80;
 
     // 2. Enveloppement du contenu du brand dans un lien <a> vers l'accueil
     const brandLink = document.createElement("a");

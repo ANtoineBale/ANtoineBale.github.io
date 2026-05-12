@@ -203,8 +203,8 @@ header {
 
 /* Photo de profil dans le header */
 .brand-photo {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
