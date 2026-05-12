@@ -6115,10 +6115,9 @@ body.dark [data-glow]::after {
     animation: none !important;
   }
 
-  /* — Photo hero sur mobile — taille réduite — */
-  .hero-photo {
-    width: 120px;
-    height: 120px;
+  /* — Cache le monogramme AB du hero accueil sur mobile — */
+  .studio-monogram {
+    display: none !important;
   }
 }
 
