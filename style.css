@@ -7559,6 +7559,35 @@ body[data-page="experiences"] .exp-hero::before {
   pointer-events: none;
 }
 
+/* ── Guillemet décoratif géant en arrière-plan ───────────── */
+body[data-page="experiences"] .exp-hero::after {
+  content: "\201C";
+  position: absolute;
+  top: clamp(-30px, -2vw, -10px);
+  left: clamp(12px, 4vw, 56px);
+  font-family: var(--font-display, "Fraunces", Georgia, serif);
+  font-size: clamp(180px, 22vw, 320px);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 0.9;
+  color: rgba(53, 92, 74, 0.08);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+body.dark[data-page="experiences"] .exp-hero::after {
+  color: rgba(136, 201, 161, 0.10);
+}
+
+@media (max-width: 760px) {
+  body[data-page="experiences"] .exp-hero::after {
+    font-size: 140px;
+    top: -10px;
+    left: 8px;
+  }
+}
+
 body[data-page="experiences"] .exp-hero > * {
   position: relative;
   z-index: 1;
