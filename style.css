@@ -8262,4 +8262,119 @@ body.dark .scroll-progress {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════ */
+/* MOBILE RESPONSIVE IMPROVEMENTS — Audit mai 2026              */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* #1 Titre header fluide (évite débordement sur 320-414px) */
+.brand h1 {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  line-height: 1.2;
+}
+
+/* #5 CTA hero en colonne sur petits écrans (touch targets confortables) */
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .cta-button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* #6 Photo header réduite sur ultra-mobile */
+@media (max-width: 480px) {
+  .brand-photo {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* #3 Metric grid 2×2 sur petit mobile (au lieu de 1 col empilé) */
+@media (max-width: 480px) {
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .metric-card {
+    padding: 16px 12px;
+  }
+  .metric-number {
+    font-size: 1.6rem;
+  }
+}
+
+/* #8 Container padding réduit en ultra-mobile (320-380px) */
+@media (max-width: 380px) {
+  .container {
+    padding: 38px 14px 80px;
+  }
+}
+
+/* #9 Home studio hero collapse plus tôt (414-720px) */
+@media (max-width: 720px) {
+  .home-studio-hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "visual"
+      "proof";
+    min-height: auto;
+    gap: 24px;
+  }
+  .studio-visual {
+    justify-content: center;
+  }
+}
+
+/* #13 Padding cards projet ajusté mobile */
+@media (max-width: 480px) {
+  .pvc-body {
+    padding: 16px;
+  }
+  .pvc-banner {
+    padding: 16px;
+  }
+}
+
+/* #14 Touch targets WCAG 44×44 garanti sur mobile */
+@media (max-width: 760px) {
+  .nav-toggle,
+  .cta-button,
+  #themeToggle,
+  .pvc-link,
+  .feature-link,
+  .footer-nav a,
+  .footer-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-nav a,
+  .footer-links a {
+    padding: 6px 4px;
+  }
+}
+
+/* Stats du hero expériences : 1 colonne sur ultra-mobile */
+@media (max-width: 480px) {
+  .exp-hero-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Tools chip grid : grille plus aérée sur mobile */
+@media (max-width: 480px) {
+  .tools-chip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .tool-chip {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
 }
