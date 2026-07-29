@@ -6620,6 +6620,11 @@ body.dark .lang-bar-fill {
   opacity: 0.40;
 }
 
+.cert-status--done {
+  background: var(--accent);
+  opacity: 0.55;
+}
+
 body.dark .cert-status--current {
   background: #a3c4b5;
   box-shadow: 0 0 0 3px rgba(163, 196, 181, 0.22);
