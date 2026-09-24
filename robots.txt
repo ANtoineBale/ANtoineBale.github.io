@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://antoine-balesi.netlify.app/sitemap.xml
+Sitemap: https://antoinebale.github.io/sitemap.xml

@@ -2,91 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/index.html</loc>
+    <loc>https://antoinebale.github.io/index.html</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/apropos.html</loc>
+    <loc>https://antoinebale.github.io/apropos.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/experiences.html</loc>
+    <loc>https://antoinebale.github.io/experiences.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/competences.html</loc>
+    <loc>https://antoinebale.github.io/competences.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/projets.html</loc>
+    <loc>https://antoinebale.github.io/projets.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/blog.html</loc>
+    <loc>https://antoinebale.github.io/cv.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://antoinebale.github.io/blog.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/contact.html</loc>
+    <loc>https://antoinebale.github.io/contact.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/experience-airbnb.html</loc>
+    <loc>https://antoinebale.github.io/experience-airbnb.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/experience-shibui.html</loc>
+    <loc>https://antoinebale.github.io/experience-shibui.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/experience-fregahouse.html</loc>
+    <loc>https://antoinebale.github.io/experience-fregahouse.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/experience-jardin.html</loc>
+    <loc>https://antoinebale.github.io/experience-jardin.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/blog-article-1.html</loc>
+    <loc>https://antoinebale.github.io/blog-article-1.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/blog-article-2.html</loc>
+    <loc>https://antoinebale.github.io/blog-article-2.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/blog-article-3.html</loc>
+    <loc>https://antoinebale.github.io/blog-article-3.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://antoine-balesi.netlify.app/blog-article-4.html</loc>
+    <loc>https://antoinebale.github.io/blog-article-4.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
