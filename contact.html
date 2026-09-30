@@ -34,7 +34,7 @@
     <div class="header-inner">
       <div class="brand">
         <p class="eyebrow">Portfolio & blog</p>
-        <h1>Antoine Balesi</h1>
+        <p class="brand-name">Antoine Balesi</p>
       </div>
 
       <div class="header-actions" data-header-actions>
@@ -66,7 +66,7 @@
   <main id="mainContent" class="container">
     <section class="carte reveal page-hero">
       <p class="section-label">Contact</p>
-      <h2>&Eacute;changeons autour d&rsquo;un stage, d&rsquo;une alternance ou d&rsquo;un projet</h2>
+      <h1 class="hero-title">&Eacute;changeons autour d&rsquo;un stage, d&rsquo;une alternance ou d&rsquo;un projet</h1>
       <p id="message">
         Que ce soit pour un stage, une alternance, un projet ou simplement &eacute;changer &mdash;
         je r&eacute;ponds rapidement par email ou LinkedIn.
@@ -82,10 +82,12 @@
         <p class="section-label">Formulaire</p>
         <h2>Envoyer un message</h2>
 
-        <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" netlify novalidate>
-          <input type="hidden" name="form-name" value="contact">
+        <form id="contactForm" name="contact" method="POST" action="https://formsubmit.co/antoinebalesi@gmail.com" novalidate>
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <p class="visually-hidden" aria-hidden="true">
-            <label>Ne pas remplir : <input name="bot-field"></label>
+            <label>Ne pas remplir : <input name="_honey" tabindex="-1" autocomplete="off"></label>
           </p>
 
           <label for="nom">Nom <span aria-hidden="true">*</span></label>

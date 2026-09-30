@@ -218,14 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // — Envoi via Netlify Forms —
+      // — Envoi via FormSubmit (compatible GitHub Pages) —
       const nom = nomEl.value.trim();
       const displayName = nom || "pour votre message";
       const formData = new FormData(contactForm);
-      const params = new URLSearchParams();
-      formData.forEach(function (value, key) {
-        params.append(key, value);
-      });
+      // Anti-spam : si le champ piège est rempli, on ignore silencieusement
+      if (formData.get("_honey")) return;
 
       const submitBtn = contactForm.querySelector("button[type=submit]");
       if (submitBtn) {
@@ -235,13 +233,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       confirmation.innerHTML = "";
 
-      fetch("/", {
+      fetch("https://formsubmit.co/ajax/antoinebalesi@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
+        headers: { Accept: "application/json" },
+        body: formData,
       })
         .then(function (response) {
           if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (!data || String(data.success) !== "true") throw new Error("Envoi refusé");
           confirmation.innerHTML =
             "Merci " +
             displayName +

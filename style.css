@@ -1,3 +1,7 @@
+/* Titre principal de page (ex-h2, passé en h1 pour le SEO) */
+h1.hero-title { font-size: 1.5em; margin-block: 0.83em; }
+.brand .brand-name { font-weight: 700; }
+
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap");
 
 * {
@@ -191,7 +195,7 @@ header {
   align-self: end;
 }
 
-.brand h1 {
+.brand h1, .brand .brand-name {
   margin: 0;
   grid-column: 2;
   grid-row: 2;
@@ -415,7 +419,7 @@ main.carte {
 
 /* Typographie */
 h2,
-h3 {
+h3, h1.hero-title {
   font-family: var(--font-display);
   color: var(--text);
 }
@@ -429,7 +433,7 @@ h3 {
   letter-spacing: 0;
 }
 
-h2 {
+h2, h1.hero-title {
   margin-top: 0;
   margin-bottom: 18px;
   line-height: 1.2;
@@ -591,7 +595,7 @@ body.dark .studio-copy {
   text-transform: uppercase;
 }
 
-.studio-copy h2 {
+.studio-copy h2, .studio-copy h1.hero-title {
   max-width: 920px;
   margin: 0;
   color: var(--text);
@@ -849,7 +853,7 @@ body.dark .home-recruiter-hero {
   text-transform: uppercase;
 }
 
-.recruiter-copy h2 {
+.recruiter-copy h2, .recruiter-copy h1.hero-title {
   max-width: 780px;
   margin-bottom: 24px;
   color: var(--text);
@@ -1050,7 +1054,7 @@ body.dark .home-editorial-hero {
   align-self: center;
 }
 
-.editorial-title h2 {
+.editorial-title h2, .editorial-title h1.hero-title {
   margin: 16px 0 0;
   color: var(--text);
   font-size: clamp(5rem, 13vw, 12rem);
@@ -2801,7 +2805,7 @@ body.dark textarea:focus-visible {
     padding: 40px 24px;
   }
 
-  .brand h1 {
+  .brand h1, .brand .brand-name {
     font-size: 1.6rem;
   }
 
@@ -2829,15 +2833,15 @@ body.dark textarea:focus-visible {
     border-radius: 26px;
   }
 
-  .studio-copy h2 {
+  .studio-copy h2, .studio-copy h1.hero-title {
     font-size: clamp(2.2rem, 10vw, 3.4rem);
   }
 
-  .recruiter-copy h2 {
+  .recruiter-copy h2, .recruiter-copy h1.hero-title {
     font-size: clamp(2.45rem, 12vw, 4.2rem);
   }
 
-  .editorial-title h2 {
+  .editorial-title h2, .editorial-title h1.hero-title {
     font-size: clamp(4.2rem, 23vw, 6.8rem);
   }
 
@@ -4029,7 +4033,7 @@ body::after {
 
 /* Titres hero en dégradé */
 .page-hero h2,
-main.carte h2 {
+main.carte h2, .page-hero h1.hero-title, main.carte h1.hero-title {
   background: linear-gradient(135deg, #1a4a2e, #2d9e5f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4037,7 +4041,7 @@ main.carte h2 {
 }
 
 body.dark .page-hero h2,
-body.dark main.carte h2 {
+body.dark main.carte h2, body.dark .page-hero h1.hero-title, body.dark main.carte h1.hero-title {
   background: linear-gradient(135deg, #5c8dff, #c084fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4422,7 +4426,7 @@ body.dark .experience-kicker {
 [data-theme="airbnb"] h2,
 [data-theme="airbnb"] main h2,
 [data-theme="airbnb"] .carte h2,
-[data-theme="airbnb"] main.carte h2 {
+[data-theme="airbnb"] main.carte h2, [data-theme="airbnb"] h1.hero-title, [data-theme="airbnb"] main h1.hero-title, [data-theme="airbnb"] .carte h1.hero-title, [data-theme="airbnb"] main.carte h1.hero-title {
   background: none !important;
   -webkit-background-clip: unset !important;
   background-clip: unset !important;
@@ -4506,7 +4510,7 @@ body.dark[data-theme="airbnb"] {
 [data-theme="frega"] .carte h2,
 [data-theme="frega"] main.carte h2,
 [data-theme="frega"] .stat-number,
-[data-theme="frega"] .metric-number {
+[data-theme="frega"] .metric-number, [data-theme="frega"] h1.hero-title, [data-theme="frega"] main h1.hero-title, [data-theme="frega"] .carte h1.hero-title, [data-theme="frega"] main.carte h1.hero-title {
   background: linear-gradient(135deg, #0b5561, #1a8595) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -4590,7 +4594,7 @@ body.dark[data-theme="frega"] main h2,
 body.dark[data-theme="frega"] .carte h2,
 body.dark[data-theme="frega"] main.carte h2,
 body.dark[data-theme="frega"] .stat-number,
-body.dark[data-theme="frega"] .metric-number {
+body.dark[data-theme="frega"] .metric-number, body.dark[data-theme="frega"] h1.hero-title, body.dark[data-theme="frega"] main h1.hero-title, body.dark[data-theme="frega"] .carte h1.hero-title, body.dark[data-theme="frega"] main.carte h1.hero-title {
   background: linear-gradient(135deg, #6bc6d5, #b8edf4) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -6267,7 +6271,7 @@ body.dark .legend-dot {
 
 .skill-domains-block > .section-label,
 .skill-domains-block > h2,
-.skill-domains-block > .muted {
+.skill-domains-block > .muted, .skill-domains-block > h1.hero-title {
   text-align: center;
 }
 
@@ -7432,7 +7436,7 @@ body.dark .exp-toc-num { color: #88c9a1; }
 [data-theme="meetup"] .carte h2,
 [data-theme="meetup"] main.carte h2,
 [data-theme="meetup"] .stat-number,
-[data-theme="meetup"] .metric-number {
+[data-theme="meetup"] .metric-number, [data-theme="meetup"] h1.hero-title, [data-theme="meetup"] main h1.hero-title, [data-theme="meetup"] .carte h1.hero-title, [data-theme="meetup"] main.carte h1.hero-title {
   background: linear-gradient(135deg, #e94a38, #ff8a3c) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -7522,7 +7526,7 @@ body.dark[data-theme="meetup"] main h2,
 body.dark[data-theme="meetup"] .carte h2,
 body.dark[data-theme="meetup"] main.carte h2,
 body.dark[data-theme="meetup"] .stat-number,
-body.dark[data-theme="meetup"] .metric-number {
+body.dark[data-theme="meetup"] .metric-number, body.dark[data-theme="meetup"] h1.hero-title, body.dark[data-theme="meetup"] main h1.hero-title, body.dark[data-theme="meetup"] .carte h1.hero-title, body.dark[data-theme="meetup"] main.carte h1.hero-title {
   background: linear-gradient(135deg, #ff9d5d, #ffd1aa) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -7566,7 +7570,7 @@ body[data-page="experiences"] .exp-hero::before {
 
 /* ── Guillemet décoratif géant en arrière-plan ───────────── */
 body[data-page="experiences"] .exp-hero::after {
-  content: "\201C";
+  content: "“";
   position: absolute;
   top: clamp(-30px, -2vw, -10px);
   left: clamp(12px, 4vw, 56px);
@@ -8241,7 +8245,7 @@ body.dark .scroll-progress {
   }
 
   /* Titres : ne pas couper à la fin d'une page */
-  h1, h2, h3 {
+  h1, h2, h3, h1.hero-title {
     page-break-after: avoid;
     page-break-inside: avoid;
   }
@@ -8272,7 +8276,7 @@ body.dark .scroll-progress {
 /* ═══════════════════════════════════════════════════════════ */
 
 /* #1 Titre header fluide (évite débordement sur 320-414px) */
-.brand h1 {
+.brand h1, .brand .brand-name {
   font-size: clamp(1.4rem, 4.5vw, 2rem);
   line-height: 1.2;
 }

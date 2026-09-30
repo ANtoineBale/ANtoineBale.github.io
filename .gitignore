@@ -1,0 +1,13 @@
+# Fichiers internes — ne pas publier sur GitHub
+.claude/
+.netlify/
+netlify.toml
+.tmp-charte/
+start-server.bat
+Claude outputs/
+lettre-motivation/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
