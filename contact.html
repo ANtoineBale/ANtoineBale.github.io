@@ -24,7 +24,7 @@
   >
   <title>Contacter Antoine Balesi — Stage ou alternance marketing 2026-2027, Marseille</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261002c">
 </head>
 <body data-page="contact">
   <a class="skip-link" href="#mainContent">Aller au contenu</a>
@@ -33,7 +33,6 @@
   <header>
     <div class="header-inner">
       <div class="brand">
-        <p class="eyebrow">Portfolio & blog</p>
         <p class="brand-name">Antoine Balesi</p>
       </div>
 
@@ -68,7 +67,7 @@
       <p class="section-label">Contact</p>
       <h1 class="hero-title">&Eacute;changeons autour d&rsquo;un stage, d&rsquo;une alternance ou d&rsquo;un projet</h1>
       <p id="message">
-        Que ce soit pour un stage, une alternance, un projet ou simplement &eacute;changer &mdash;
+        Que ce soit pour un stage, une alternance, un projet de site avec <a href="blog-article-5.html">Studio Balesi</a> ou simplement &eacute;changer &mdash;
         je r&eacute;ponds rapidement par email ou LinkedIn.
       </p>
       <p class="page-hero-secondary">
@@ -113,6 +112,13 @@
           >
           <span id="emailHint" class="form-hint">Format attendu : nom@domaine.fr</span>
           <span id="emailError" class="form-error" role="alert"></span>
+
+          <label for="sujet">Objet de votre message</label>
+          <select id="sujet" name="sujet">
+            <option value="Stage / alternance">Stage ou alternance</option>
+            <option value="Studio Balesi - projet freelance">Projet de site ou de marque (Studio Balesi)</option>
+            <option value="Autre">Autre</option>
+          </select>
 
           <label for="messageContact">Message <span aria-hidden="true">*</span></label>
           <textarea
@@ -205,6 +211,7 @@
       <a href="experiences.html">Exp&eacute;riences</a>
       <a href="competences.html">Comp&eacute;tences</a>
       <a href="projets.html">Projets</a>
+      <a href="blog-article-5.html">Studio Balesi</a>
       <a href="cv.html">CV</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
@@ -226,7 +233,7 @@
     <p>Antoine Balesi &mdash; Marketing digital, communication et projets.</p>
   </footer>
 
-  <script src="script.js?v=20260502-themefix"></script>
+  <script src="script.js?v=20261002-header"></script>
   <script>
     // Lazy-load globe.gl quand la section devient visible
     function loadGlobeScript() {
@@ -354,6 +361,17 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
     <span>Voir mon CV</span>
   </a>
+  <script>
+    (function () {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get('sujet') === 'studio') {
+          var sel = document.getElementById('sujet');
+          if (sel) sel.value = 'Studio Balesi - projet freelance';
+        }
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
 

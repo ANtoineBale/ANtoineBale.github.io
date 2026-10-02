@@ -1,8 +1,9 @@
+/* @import doit rester tout en haut du fichier, sinon le navigateur l'ignore */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap");
+
 /* Titre principal de page (ex-h2, passé en h1 pour le SEO) */
 h1.hero-title { font-size: 1.5em; margin-block: 0.83em; }
 .brand .brand-name { font-weight: 700; }
-
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7740,15 +7741,10 @@ body[data-page="experiences"] .exp-toc-grid {
   gap: 12px;
 }
 
+/* Pas de trait de frise : les cartes étant translucides, il apparaissait
+   à travers elles, sous les noms, comme un défaut d'affichage. */
 body[data-page="experiences"] .exp-toc-grid::before {
-  content: "";
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  top: 50%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(53, 92, 74, 0.18), transparent);
-  z-index: 0;
+  content: none;
 }
 
 body[data-page="experiences"] .exp-toc-grid > li {
@@ -7853,10 +7849,6 @@ body.dark[data-page="experiences"] .exp-stat-inline {
 
 body.dark[data-page="experiences"] .exp-stat-icon {
   background: rgba(136, 201, 161, 0.11);
-}
-
-body.dark[data-page="experiences"] .exp-toc-grid::before {
-  background: linear-gradient(90deg, transparent, rgba(136, 201, 161, 0.22), transparent);
 }
 
 body.dark[data-page="experiences"] .exp-toc-grid a {
@@ -8661,4 +8653,394 @@ body.dark .scroll-progress {
     border: none;
     margin: 0;
   }
+}
+
+/* =========================================================
+   Studio Balesi â€” carte projet + select du formulaire de contact
+   ========================================================= */
+.pvc-banner--studio {
+  background: linear-gradient(135deg, #1f5c43 0%, #2e7d5b 100%);
+}
+
+select {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--input-bg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 14px;
+  font-family: var(--font-body);
+}
+select:focus-visible {
+  outline: none;
+  border-color: #446e59;
+  box-shadow: 0 0 0 4px rgba(68, 110, 89, 0.14);
+}
+
+/* =========================================================
+   Refonte esthétique — octobre 2026
+   Header compact, hero allégé, cartes et icônes unifiées,
+   serif réservée aux grands titres, rythme vertical régulier.
+   Placé en fin de fichier pour primer sur les couches précédentes.
+   ========================================================= */
+
+/* ---- Header : une seule ligne, ~70px ---- */
+html {
+  scroll-padding-top: 88px;
+}
+
+header {
+  padding: 12px 20px;
+}
+
+.header-inner {
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-photo {
+  width: 44px;
+  height: 44px;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+.brand h1, .brand .brand-name {
+  /* l'ancienne règle (grille) le collait en haut de la photo */
+  align-self: center;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.header-actions {
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.main-nav {
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Contact mis en avant comme bouton */
+.main-nav a[data-nav="contact"] {
+  padding: 9px 16px;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--button);
+  box-shadow: var(--button-shadow);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.main-nav a[data-nav="contact"]::after {
+  display: none;
+}
+
+.main-nav a[data-nav="contact"]:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+body.dark .main-nav a[data-nav="contact"].is-active,
+.main-nav a[data-nav="contact"].is-active {
+  color: #fff;
+}
+
+/* Bascule de thème : simple icône */
+#themeToggle {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: var(--nav);
+  background: transparent;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+#themeToggle:hover {
+  background: rgba(53, 92, 74, 0.08);
+  transform: none;
+}
+
+body.dark #themeToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Bouton Menu (mobile) dans le même style discret */
+.nav-toggle {
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: var(--nav);
+  background: transparent;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.nav-toggle:hover {
+  background: rgba(53, 92, 74, 0.08);
+  transform: none;
+}
+
+/* Menu replié en dessous de 1080px : le header reste sur une ligne */
+@media (max-width: 1080px) {
+  .header-inner {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .header-actions {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    width: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 20px;
+    /* quasi opaque : le flou ne fonctionne pas imbriqué dans le header */
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  body.dark .main-nav {
+    background: #111a2e;
+  }
+
+  .header-actions.nav-open .main-nav {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav a.is-active {
+    background: rgba(53, 92, 74, 0.08);
+  }
+
+  body.dark .main-nav a.is-active {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .main-nav a[data-nav="contact"] {
+    margin-top: 6px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle,
+  #themeToggle {
+    width: auto;
+  }
+
+  #themeToggle {
+    width: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    padding: 10px 14px;
+  }
+
+  .header-inner {
+    gap: 10px;
+  }
+
+  .brand-link {
+    gap: 10px;
+  }
+
+  .brand-photo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand h1, .brand .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+}
+
+/* ---- Hero accueil : allégé ---- */
+.home-studio-hero {
+  grid-template-areas: "copy visual";
+  border-radius: 28px;
+}
+
+.studio-subtitle {
+  margin: 16px 0 18px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 0 6px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-link::after {
+  content: "→";
+  transition: transform 0.25s ease;
+}
+
+.hero-link:hover::after {
+  transform: translateX(4px);
+}
+
+body.dark .hero-link {
+  color: #7ec8a0;
+}
+
+@media (max-width: 920px) {
+  .home-studio-hero {
+    grid-template-areas: "copy";
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-actions .hero-link {
+    justify-content: center;
+  }
+}
+
+/* ---- Typographie : serif réservée aux grands titres ---- */
+h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Rythme vertical régulier entre sections ---- */
+.container > * + * {
+  margin-top: 80px;
+}
+
+@media (max-width: 700px) {
+  .container > * + * {
+    margin-top: 48px;
+  }
+}
+
+/* ---- Cartes : un seul langage visuel ---- */
+/* Plus de barre de couleur en haut des cartes */
+.metric-card::before,
+.feature::before,
+.project-card::before,
+.post-card::before,
+.info-card::before,
+.apport-accent-bar {
+  display: none;
+}
+
+/* Cartes posées sur le fond : même rayon que les grandes cartes */
+.carte,
+.feature,
+.metric-card {
+  border-radius: 24px;
+}
+
+/* Cartes de rubrique alignées à gauche, comme le reste du contenu */
+.feature {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Éléments à l'intérieur d'une carte : fond doux, bordure fine, sans effet */
+.apport-item,
+.experience-item {
+  border-radius: 18px;
+  background: var(--soft-box);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.apport-item:hover,
+body.dark .apport-item:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Icônes : une seule taille, une seule couleur */
+body .apport-grid .apport-icon-wrap,
+body .features .feature-icon-wrap,
+body .objectif-grid .objectif-icon-wrap {
+  width: 44px;
+  height: 44px;
+  margin: 0 0 16px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: rgba(53, 92, 74, 0.10);
+  border: 1px solid rgba(53, 92, 74, 0.15);
+}
+
+body .objectif-grid .objectif-icon-wrap {
+  margin-bottom: 4px;
+}
+
+body .apport-grid .apport-icon-wrap svg,
+body .features .feature-icon-wrap svg,
+body .objectif-grid .objectif-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+body.dark .apport-grid .apport-icon-wrap,
+body.dark .features .feature-icon-wrap,
+body.dark .objectif-grid .objectif-icon-wrap {
+  color: #7ec8a0;
+  background: rgba(126, 200, 160, 0.10);
+  border-color: rgba(126, 200, 160, 0.20);
 }

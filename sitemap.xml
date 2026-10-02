@@ -97,4 +97,10 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <url>
+    <loc>https://antoinebale.github.io/blog-article-5.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
