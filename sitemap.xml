@@ -104,6 +104,12 @@
   </url>
 
   <url>
+    <loc>https://antoinebale.github.io/blog-article-6.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://antoinebale.github.io/experience-belavi.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>

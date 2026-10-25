@@ -9083,3 +9083,8 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
   background: rgba(180, 83, 9, 0.10);
   border-color: rgba(180, 83, 9, 0.22);
 }
+
+/* Cartes du blog : la flèche est déjà dans le texte « Lire l’article → » */
+.post-card .feature-link::after {
+  content: none;
+}

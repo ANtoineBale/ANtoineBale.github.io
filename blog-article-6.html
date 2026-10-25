@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comment j'ai construit Belavi, un SaaS de livret d'accueil généré par l'IA, en 13 jours avec Claude Code, sans être développeur : méthode, journal de bord et leçons.">
+  <link rel="canonical" href="https://antoinebale.github.io/blog-article-6.html">
+  <meta property="og:url" content="https://antoinebale.github.io/blog-article-6.html">
+  <meta name="theme-color" content="#355c4a">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Comment j'ai construit un SaaS en 13 jours avec Claude Code — Antoine Balesi">
+  <meta property="og:description" content="Belavi, du premier commit au paiement en ligne en 13 jours : la méthode, le journal de bord et ce que l'IA ne fait pas à votre place.">
+  <meta property="og:image" content="https://antoinebale.github.io/images/belavi/belavi-accueil.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://antoinebale.github.io/images/belavi/belavi-accueil.jpg">
+  <meta name="twitter:title" content="Comment j'ai construit un SaaS en 13 jours avec Claude Code — Antoine Balesi">
+  <meta name="twitter:description" content="Belavi, du premier commit au paiement en ligne en 13 jours : la méthode, le journal de bord et ce que l'IA ne fait pas à votre place.">
+  <title>Comment j'ai construit un SaaS en 13 jours avec Claude Code — Antoine Balesi</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=20261025b">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://antoinebale.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antoinebale.github.io/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Un SaaS en 13 jours avec Claude Code", "item": "https://antoinebale.github.io/blog-article-6.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Comment j'ai construit un SaaS en 13 jours avec Claude Code",
+    "author": { "@type": "Person", "name": "Antoine Balesi", "url": "https://antoinebale.github.io/" },
+    "datePublished": "2026-10-25",
+    "url": "https://antoinebale.github.io/blog-article-6.html",
+    "image": "https://antoinebale.github.io/images/belavi/belavi-accueil.jpg",
+    "description": "Comment Antoine Balesi a construit Belavi, un SaaS de livret d'accueil généré par l'IA, en 13 jours avec Claude Code, sans être développeur.",
+    "keywords": "Claude Code, vibe-coding, SaaS, IA générative, Belavi, livret d'accueil, Next.js, product management"
+  }
+  </script>
+</head>
+<body data-page="blog">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#mainContent">Aller au contenu</a>
+  <div id="particles"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <p class="brand-name">Antoine Balesi</p>
+      </div>
+      <div class="header-actions" data-header-actions>
+        <button class="nav-toggle" type="button" aria-controls="siteNav" aria-expanded="false">Menu</button>
+        <nav id="siteNav" class="main-nav" aria-label="Navigation principale">
+          <a href="index.html" data-nav="accueil">Accueil</a>
+          <a href="apropos.html" data-nav="apropos">&Agrave; propos</a>
+          <a href="experiences.html" data-nav="experiences">Exp&eacute;riences</a>
+          <a href="competences.html" data-nav="competences">Comp&eacute;tences</a>
+          <a href="projets.html" data-nav="projets">Projets</a>
+          <a href="cv.html" data-nav="cv">CV</a>
+          <a href="blog.html" data-nav="blog">Blog</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+        </nav>
+        <button id="themeToggle" type="button" aria-label="Basculer le th&egrave;me">Mode sombre</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent" class="container">
+
+    <nav class="breadcrumb" aria-label="Fil d&rsquo;Ariane">
+      <a href="blog.html">Blog</a>
+      <span>&rsaquo;</span>
+      <span>Un SaaS en 13 jours avec Claude Code</span>
+    </nav>
+
+    <article>
+
+      <section class="carte scroll-reveal page-hero">
+        <div class="post-compact-meta" style="margin-bottom: 12px;">
+          <p class="section-label">IA &amp; produit</p>
+          <p class="post-date">Octobre 2026 &mdash; 7 min de lecture</p>
+        </div>
+        <h1 class="hero-title">Comment j&rsquo;ai construit un SaaS en 13 jours avec Claude Code</h1>
+        <p id="message">
+          Je ne suis pas d&eacute;veloppeur. Pourtant, entre le 7 et le 20 octobre 2026, j&rsquo;ai mis en ligne
+          Belavi, un livret d&rsquo;accueil digital g&eacute;n&eacute;r&eacute; par l&rsquo;IA, avec comptes, paiement et
+          pages l&eacute;gales. Voici la m&eacute;thode, le journal de bord, et surtout ce que l&rsquo;IA ne fait pas &agrave; ma place.
+        </p>
+        <div class="tag-list" style="margin-top: 16px;">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Vibe-coding</span>
+          <span class="tag">SaaS</span>
+          <span class="tag">Product management</span>
+        </div>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>Le point de d&eacute;part&nbsp;: un probl&egrave;me que je connaissais par c&oelig;ur</h3>
+        <p>
+          Pendant trois ans, j&rsquo;ai co-g&eacute;r&eacute; un logement sur Airbnb &agrave; Marseille. Je sais ce que c&rsquo;est
+          de r&eacute;pondre pour la dixi&egrave;me fois &laquo;&nbsp;c&rsquo;est quoi le code du wifi&nbsp;?&nbsp;&raquo;, souvent tard le soir.
+          Les livrets papier ou PDF ne r&egrave;glent pas grand-chose&nbsp;: ils sont vite obsol&egrave;tes, peu lisibles
+          sur un t&eacute;l&eacute;phone et rarement traduits.
+        </p>
+        <p>
+          L&rsquo;id&eacute;e de Belavi est simple&nbsp;: l&rsquo;h&ocirc;te colle le texte de son annonce, l&rsquo;IA r&eacute;dige un livret
+          complet, et le voyageur le consulte sur son t&eacute;l&eacute;phone gr&acirc;ce &agrave; un QR code. Des outils existent
+          d&eacute;j&agrave;, mais souvent en anglais et en demandant de tout saisir &agrave; la main. Mon angle&nbsp;: partir
+          de ce que l&rsquo;h&ocirc;te a d&eacute;j&agrave; &eacute;crit, en fran&ccedil;ais, pour des gens qui ne sont pas techniques.
+        </p>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>D&rsquo;abord cadrer, ensuite coder</h3>
+        <p>
+          Avant la premi&egrave;re ligne de code, j&rsquo;ai pass&eacute; du temps sur ce que je sais faire&nbsp;: le marketing.
+          Avec Claude comme partenaire de r&eacute;flexion, j&rsquo;ai &eacute;crit un brief complet&nbsp;: le probl&egrave;me, les cibles
+          (les conciergeries d&rsquo;abord, les h&ocirc;tes ind&eacute;pendants ensuite), la concurrence, la promesse et une
+          premi&egrave;re hypoth&egrave;se de prix.
+        </p>
+        <p>
+          Ce brief est devenu un fichier de contexte que Claude Code relit &agrave; chaque session, avec quelques
+          <strong>r&egrave;gles non n&eacute;gociables</strong>&nbsp;:
+        </p>
+        <ul class="content-list content-list--check">
+          <li>L&rsquo;IA <strong>n&rsquo;invente jamais une information pratique</strong>&nbsp;: un code, un horaire ou un num&eacute;ro absent de l&rsquo;annonce reste vide et appara&icirc;t dans une liste &laquo;&nbsp;&agrave; compl&eacute;ter&nbsp;&raquo;.</li>
+          <li>La cl&eacute; de l&rsquo;API reste c&ocirc;t&eacute; serveur, jamais dans le code visible par le navigateur.</li>
+          <li>Le contenu du livret et son apparence sont s&eacute;par&eacute;s&nbsp;: changer de th&egrave;me ne touche jamais au texte.</li>
+          <li>Tout est en fran&ccedil;ais et pens&eacute; pour le mobile d&rsquo;abord.</li>
+        </ul>
+        <p>
+          Enfin, j&rsquo;ai d&eacute;coup&eacute; la premi&egrave;re version en <strong>six phases</strong>, avec une r&egrave;gle&nbsp;: une
+          phase &agrave; la fois, un test sur mon &eacute;cran, puis ma validation avant de passer &agrave; la suivante.
+          C&rsquo;est exactement ce qu&rsquo;on apprend en gestion de projet&nbsp;; la diff&eacute;rence, c&rsquo;est que
+          l&rsquo;&eacute;quipe de d&eacute;veloppement &eacute;tait une IA.
+        </p>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>Le journal de bord, jour par jour</h3>
+        <p>Les dates viennent de l&rsquo;historique du code&nbsp;: rien n&rsquo;est arrondi.</p>
+        <ul class="content-list">
+          <li><strong>7 octobre</strong> &mdash; cr&eacute;ation du projet, fondations et premi&egrave;re page voyageur (th&egrave;me Provence).</li>
+          <li><strong>9 octobre</strong> &mdash; les deux autres th&egrave;mes, l&rsquo;&eacute;diteur avec aper&ccedil;u en direct, la g&eacute;n&eacute;ration par l&rsquo;IA et la page d&rsquo;accueil. Le prototype complet existe.</li>
+          <li><strong>11 octobre</strong> &mdash; changement de mod&egrave;le &eacute;conomique (essai gratuit de 30 jours) et premi&egrave;re mise en ligne.</li>
+          <li><strong>17 octobre</strong> &mdash; le projet devient <strong>Belavi</strong>&nbsp;: nouveau nom, nom de domaine, page Tarifs, et une limite de g&eacute;n&eacute;rations pour prot&eacute;ger le budget.</li>
+          <li><strong>18 octobre</strong> &mdash; comptes et publication des livrets, envoi de photos, import par captures d&rsquo;&eacute;cran, pages l&eacute;gales et paiement en mode test.</li>
+          <li><strong>20 octobre</strong> &mdash; paiement r&eacute;el activ&eacute;, conditions g&eacute;n&eacute;rales de vente, r&eacute;f&eacute;rencement, blog, livret en anglais et lecture sans r&eacute;seau.</li>
+        </ul>
+        <p>
+          Treize jours entre le premier commit et un produit capable d&rsquo;encaisser un abonnement. Ce n&rsquo;est
+          pas une course&nbsp;: c&rsquo;est surtout la preuve qu&rsquo;un profil marketing peut aujourd&rsquo;hui tester une
+          id&eacute;e en vrai, au lieu de la laisser dans une pr&eacute;sentation.
+        </p>
+        <img src="images/belavi/belavi-editeur.jpg" alt="&Eacute;diteur Belavi&nbsp;: l&rsquo;h&ocirc;te colle son annonce ou ajoute des captures d&rsquo;&eacute;cran" class="detail-img" loading="lazy" width="1440" height="900" style="margin-top: 16px;">
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>Ce que fait Claude Code, et ce qu&rsquo;il ne fait pas</h3>
+        <p>
+          Claude Code &eacute;crit le code, l&rsquo;explique et corrige ses erreurs. &Agrave; chaque &eacute;tape, je lui demandais
+          de m&rsquo;expliquer simplement ce qu&rsquo;il faisait et pourquoi, et de me donner les commandes une par une.
+          J&rsquo;ai appris plus de technique en deux semaines qu&rsquo;en lisant des tutoriels.
+        </p>
+        <p>
+          Mais l&rsquo;IA ne d&eacute;cide de rien. C&rsquo;est moi qui ai choisi la cible, le prix, le nom, ce qu&rsquo;on
+          affiche en premier sur un t&eacute;l&eacute;phone, et ce qu&rsquo;on refuse de laisser faire &agrave; la machine. C&rsquo;est
+          moi aussi qui testais chaque &eacute;cran, rep&eacute;rais ce qui n&rsquo;allait pas et demandais de recommencer.
+          Le &laquo;&nbsp;vibe-coding&nbsp;&raquo; n&rsquo;est pas magique&nbsp;: c&rsquo;est du pilotage de projet, avec un
+          d&eacute;veloppeur tr&egrave;s rapide qui a besoin d&rsquo;un cap tr&egrave;s clair.
+        </p>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>Ce que le code ne r&egrave;gle pas</h3>
+        <p>
+          La partie la plus formatrice n&rsquo;a pas &eacute;t&eacute; technique. Vendre un abonnement en ligne, c&rsquo;est aussi&nbsp;:
+        </p>
+        <ul class="content-list content-list--check">
+          <li><strong>Le droit</strong>&nbsp;: mentions l&eacute;gales, politique de confidentialit&eacute;, conditions d&rsquo;utilisation et conditions g&eacute;n&eacute;rales de vente.</li>
+          <li><strong>Les co&ucirc;ts</strong>&nbsp;: j&rsquo;ai mesur&eacute; le prix d&rsquo;une g&eacute;n&eacute;ration (environ un centime), calcul&eacute; les frais fixes et le nombre d&rsquo;abonn&eacute;s n&eacute;cessaires pour &ecirc;tre rentable, et gard&eacute; des cr&eacute;dits IA pr&eacute;pay&eacute;s sans recharge automatique.</li>
+          <li><strong>La confiance</strong>&nbsp;: donn&eacute;es h&eacute;berg&eacute;es en Europe, liens de livret impossibles &agrave; deviner, paiement s&eacute;curis&eacute;.</li>
+        </ul>
+        <p>
+          Pour prendre du recul, j&rsquo;ai fait r&eacute;aliser un audit complet du site&nbsp;: technique, r&eacute;f&eacute;rencement,
+          accessibilit&eacute;, s&eacute;curit&eacute;, l&eacute;gal et conversion. R&eacute;sultat&nbsp;: une base technique solide, et une
+          liste claire de ce qui reste &agrave; am&eacute;liorer, surtout c&ocirc;t&eacute; conversion et obligations l&eacute;gales.
+        </p>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>Ce que &ccedil;a change pour mon m&eacute;tier</h3>
+        <p>
+          Je suis en Mast&egrave;re Transformation Digitale &amp; IA en Strat&eacute;gie Marketing, et Belavi est
+          probablement le meilleur exercice que je pouvais me donner. J&rsquo;en retiens trois choses&nbsp;:
+        </p>
+        <ul class="content-list content-list--check">
+          <li>Un profil marketing qui sait <strong>prototyper</strong> peut tester une id&eacute;e en quelques jours au lieu de la d&eacute;fendre en r&eacute;union.</li>
+          <li>Comprendre comment un produit est construit rend <strong>plus pertinent face &agrave; une &eacute;quipe technique</strong>&nbsp;: on sait ce qui est simple, ce qui co&ucirc;te cher, et quoi demander.</li>
+          <li>L&rsquo;IA ne remplace pas le jugement&nbsp;: elle <strong>d&eacute;place la valeur</strong> vers le cadrage, les d&eacute;cisions et la qualit&eacute; des consignes.</li>
+        </ul>
+        <p>
+          C&rsquo;est cette fa&ccedil;on de travailler que je veux apporter dans l&rsquo;entreprise qui m&rsquo;accueillera en stage
+          ou en alternance en 2026-2027.
+        </p>
+      </section>
+
+      <section class="carte scroll-reveal">
+        <h3>La suite</h3>
+        <p>
+          Le produit est en ligne et pr&ecirc;t &agrave; encaisser. La prochaine &eacute;tape est commerciale&nbsp;: faire
+          tester Belavi &agrave; des h&ocirc;tes et convaincre les premi&egrave;res conciergeries. Je partagerai ici ce que
+          j&rsquo;apprends, y compris ce qui ne marche pas.
+        </p>
+        <div class="hero-actions" style="margin-top: 20px;">
+          <a href="experience-belavi.html" class="cta-button">Voir le projet en d&eacute;tail</a>
+          <a href="https://www.belavi.fr/" class="cta-button secondary" target="_blank" rel="noreferrer" aria-label="Essayer Belavi (nouvelle fen&ecirc;tre)">Essayer belavi.fr</a>
+        </div>
+      </section>
+
+    </article>
+
+
+    <aside class="author-bio scroll-reveal" aria-label="À propos de l'auteur">
+      <div class="author-bio-mono" aria-hidden="true">AB</div>
+      <div class="author-bio-text">
+        <p class="author-bio-name">Antoine Balesi</p>
+        <p class="author-bio-role">Fondateur de Belavi et de Studio Balesi, étudiant en Mastère Transformation Digitale &amp; IA en Stratégie Marketing à Ynov Aix-en-Provence. En recherche de stage ou d’alternance pour 2026-2027.</p>
+        <div class="author-bio-links">
+          <a href="apropos.html">En savoir plus</a>
+          <span aria-hidden="true">·</span>
+          <a href="contact.html">Me contacter</a>
+        </div>
+      </div>
+    </aside>
+
+    <nav class="experience-nav scroll-reveal" aria-label="Navigation entre articles">
+      <a href="blog-article-5.html" class="cta-button secondary">&larr; Article pr&eacute;c&eacute;dent</a>
+      <a href="blog.html" class="cta-button">Retour au blog</a>
+      <a href="blog-article-1.html" class="cta-button secondary">Article suivant &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer"><div class="footer-cta"><span class="footer-dot" aria-hidden="true"></span>Disponible pour un stage ou une alternance &mdash; 2026-2027</div>
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">&Agrave; propos</a>
+      <a href="experiences.html">Exp&eacute;riences</a>
+      <a href="competences.html">Comp&eacute;tences</a>
+      <a href="projets.html">Projets</a>
+      <a href="blog-article-5.html">Studio Balesi</a>
+      <a href="cv.html">CV</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-links">
+      <a href="mailto:antoinebalesi@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        antoinebalesi@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noreferrer" aria-label="LinkedIn (nouvelle fenêtre)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="cv-antoine-balesi.pdf" download>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Voir mon CV
+      </a>
+    </div>
+    <p>Antoine Balesi &mdash; Marketing digital, communication et projets.</p>
+  </footer>
+
+  <script src="script.js?v=20261002-header"></script>
+
+  <a href="cv-antoine-balesi.pdf" class="cv-fab" download aria-label="T&eacute;l&eacute;charger mon CV (PDF)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    <span>Voir mon CV</span>
+  </a>
+
+  <script>
+    (function () {
+      var bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      function update() {
+        var d = document.documentElement;
+        var scrolled = d.scrollTop || document.body.scrollTop;
+        var maxScroll = (d.scrollHeight || document.body.scrollHeight) - d.clientHeight;
+        var pct = maxScroll > 0 ? (scrolled / maxScroll) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
