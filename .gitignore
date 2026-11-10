@@ -11,3 +11,6 @@ lettre-motivation/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Tests navigateur automatisés
+.playwright-mcp/
