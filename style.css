@@ -4939,7 +4939,16 @@ body.dark .project-visual-card:hover {
 
 /* Logo Jardin : carré → un peu plus grand pour bien remplir la bande */
 .pvc-banner--jardin .pvc-logo-banner {
-  height: 82px;
+  height: 150px;
+  margin-bottom: -6px;
+}
+
+/* Écrans tactiles : bandeau de 110 px, le logo doit y tenir */
+@media (hover: none) {
+  .pvc-banner--jardin .pvc-logo-banner {
+    height: 96px;
+    margin-bottom: -10px;
+  }
 }
 
 /* Corps de la carte */
