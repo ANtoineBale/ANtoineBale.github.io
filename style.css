@@ -4862,10 +4862,10 @@ body.dark .project-visual-card:hover {
 /* Numéro de projet en filigrane */
 .pvc-number {
   position: absolute;
-  top: -10px;
-  right: 16px;
+  top: 14px;
+  right: 20px;
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-weight: 700;
   line-height: 1;
   opacity: 0.18;
@@ -4935,20 +4935,6 @@ body.dark .project-visual-card:hover {
 
 .pvc-banner--jardin {
   background: linear-gradient(135deg, #355c4a 0%, #4e8068 100%);
-}
-
-/* Logo Jardin : carré → un peu plus grand pour bien remplir la bande */
-.pvc-banner--jardin .pvc-logo-banner {
-  height: 150px;
-  margin-bottom: -6px;
-}
-
-/* Écrans tactiles : bandeau de 110 px, le logo doit y tenir */
-@media (hover: none) {
-  .pvc-banner--jardin .pvc-logo-banner {
-    height: 96px;
-    margin-bottom: -10px;
-  }
 }
 
 /* Corps de la carte */
@@ -9526,11 +9512,25 @@ body.dark .toc-card a:hover { color: #7ec8a0; }
 body.dark .toc-card a.is-current { border-left-color: #7ec8a0; background: rgba(126, 200, 160, 0.12); }
 @media (pointer: coarse) { .toc-card a { min-height: 44px; } }
 
-/* Logo Horizon Digital dans le bandeau : couleurs d'origine, sans filtre blanc */
-.pvc-logo-horizon {
-  height: 76px;
+/* ── Logos des cartes Projets : taille visuelle homogène ────────
+   Hauteur visible visée : ~64 px (icônes carrées), les logos très
+   larges ou très hauts sont ajustés pour le même poids visuel.   */
+.pvc-banner { --k: 1; }
+.pvc-banner .pvc-logo-banner,
+.pvc-banner .pvc-logo-belavi,
+.pvc-banner .pvc-logo-horizon {
   width: auto;
-  display: block;
-  margin-bottom: -6px;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+  object-fit: contain;
+  margin-bottom: 0;
+}
+.pvc-banner--airbnb .pvc-logo-banner { height: calc(64px * var(--k)); }
+.pvc-banner--belavi .pvc-logo-belavi { height: calc(64px * var(--k)); width: calc(64px * var(--k)); }
+.pvc-banner--frega .pvc-logo-banner { height: calc(70px * var(--k)); margin-bottom: calc(-3px * var(--k)); }
+.pvc-banner--studio .pvc-logo-horizon { height: calc(78px * var(--k)); margin-bottom: calc(-7px * var(--k)); filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35)); }
+.pvc-banner--jardin .pvc-logo-banner { height: calc(92px * var(--k)); }
+.pvc-banner--shibui .pvc-logo-banner { height: auto; width: calc(128px * var(--k)); }
+
+/* Écrans tactiles : bandeau de 110 px, logos un peu réduits pour y tenir */
+@media (hover: none) {
+  .pvc-banner { --k: 0.82; }
 }
