@@ -9599,3 +9599,32 @@ body.dark .metric-card:focus-within {
   .metric-card:hover .metric-number,
   .metric-card:focus-within .metric-number { transform: none; }
 }
+
+/* ── Page Contact : deux cartes de même largeur, même hauteur, même départ ── */
+.split.contact-layout {
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.contact-layout > .carte {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.contact-layout > .carte:last-child .contact-methods {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.contact-layout .info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.contact-layout .info-card p { margin: 0; }
+.contact-layout .copy-btn { align-self: flex-start; }
+.contact-layout .contact-cta-group { margin-top: 20px; }
+@media (max-width: 760px) {
+  .split.contact-layout { grid-template-columns: 1fr; }
+}
