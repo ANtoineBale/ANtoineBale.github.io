@@ -8671,7 +8671,7 @@ body.dark .scroll-progress {
    Studio Balesi â€” carte projet + select du formulaire de contact
    ========================================================= */
 .pvc-banner--studio {
-  background: linear-gradient(135deg, #1f5c43 0%, #2e7d5b 100%);
+  background: linear-gradient(135deg, #0a1226 0%, #16213e 45%, #1668c9 100%);
 }
 
 select {
