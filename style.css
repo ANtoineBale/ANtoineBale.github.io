@@ -9534,3 +9534,90 @@ body.dark .toc-card a.is-current { border-left-color: #7ec8a0; background: rgba(
 @media (hover: none) {
   .pvc-banner { --k: 0.82; }
 }
+
+/* ── Accueil : effet au survol des 4 cartes de chiffres ───────── */
+.metric-card {
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.metric-card > * { position: relative; z-index: 1; }
+
+/* Halo qui suit la souris (position mise à jour par script.js) */
+.metric-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(77, 158, 114, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.metric-number {
+  background-size: 220% 100%;
+  background-position: 0 0;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), background-position 0.6s ease;
+}
+.metric-label {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.metric-label::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: #b7794f;
+  transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (hover: hover) {
+  .metric-card:hover,
+  .metric-card:focus-within {
+    transform: translateY(-7px);
+    border-color: rgba(183, 121, 79, 0.45);
+    box-shadow: 0 22px 44px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(183, 121, 79, 0.12);
+  }
+  .metric-card:hover::after,
+  .metric-card:focus-within::after { opacity: 1; }
+  .metric-card:hover .metric-number,
+  .metric-card:focus-within .metric-number {
+    transform: scale(1.08);
+    background-position: 100% 0;
+  }
+  .metric-card:hover .metric-label::after,
+  .metric-card:focus-within .metric-label::after { width: 42px; }
+}
+
+.metric-number {
+  background-image: linear-gradient(110deg, #1a4a2e 0%, #2d9e5f 42%, #9a5f38 58%, #c2855a 100%);
+}
+body.dark .metric-number {
+  background-image: linear-gradient(110deg, #5c8dff 0%, #c084fc 42%, #e59a5c 58%, #f0b27a 100%);
+}
+body.dark .metric-card::after {
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(92, 141, 255, 0.22), transparent 70%);
+}
+body.dark .metric-label::after { background: #f0b27a; }
+body.dark .metric-card:hover,
+body.dark .metric-card:focus-within {
+  border-color: rgba(240, 178, 122, 0.4);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(240, 178, 122, 0.12);
+}
+
+.metric-card:active { transform: scale(0.98); }
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-card,
+  .metric-number,
+  .metric-label::after { transition: none; }
+  .metric-card:hover,
+  .metric-card:focus-within { transform: none; }
+  .metric-card:hover .metric-number,
+  .metric-card:focus-within .metric-number { transform: none; }
+}
