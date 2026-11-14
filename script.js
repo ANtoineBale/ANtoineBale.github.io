@@ -747,15 +747,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { rootMargin: "-90px 0px -55% 0px" });
   titres.forEach(function (h) { observer.observe(h); });
 }());
-
-// Cartes de chiffres : le halo de survol suit la souris
-(function () {
-  if (!window.matchMedia("(hover: hover)").matches) return;
-  document.querySelectorAll(".metric-card").forEach(function (carte) {
-    carte.addEventListener("pointermove", function (e) {
-      var r = carte.getBoundingClientRect();
-      carte.style.setProperty("--mx", (e.clientX - r.left) + "px");
-      carte.style.setProperty("--my", (e.clientY - r.top) + "px");
-    });
-  });
-}());
