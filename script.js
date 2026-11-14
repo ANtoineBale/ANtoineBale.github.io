@@ -637,3 +637,53 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
   }
 }());
+
+// Boutons « Copier » : copie la valeur de data-copy et confirme pendant 2 secondes
+(function () {
+  var buttons = document.querySelectorAll("[data-copy]");
+  if (!buttons.length) return;
+
+  function copier(texte) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(texte);
+    }
+    // Repli pour les contextes sans API presse-papiers (ancien navigateur, fichier local)
+    return new Promise(function (resolve, reject) {
+      var zone = document.createElement("textarea");
+      zone.value = texte;
+      zone.setAttribute("readonly", "");
+      zone.style.position = "fixed";
+      zone.style.opacity = "0";
+      document.body.appendChild(zone);
+      zone.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(zone);
+      ok ? resolve() : reject();
+    });
+  }
+
+  buttons.forEach(function (bouton) {
+    var label = bouton.querySelector(".copy-btn-label");
+    var initial = label ? label.textContent : "";
+    var statut = bouton.parentNode.querySelector("[data-copy-status]");
+    var retour;
+
+    bouton.addEventListener("click", function () {
+      copier(bouton.getAttribute("data-copy")).then(function () {
+        var message = bouton.getAttribute("data-copy-done") || "Copié";
+        if (label) label.textContent = message;
+        if (statut) statut.textContent = message;
+        bouton.classList.add("is-copied");
+        clearTimeout(retour);
+        retour = setTimeout(function () {
+          if (label) label.textContent = initial;
+          if (statut) statut.textContent = "";
+          bouton.classList.remove("is-copied");
+        }, 2000);
+      }).catch(function () {
+        if (label) label.textContent = "Copie impossible";
+      });
+    });
+  });
+}());

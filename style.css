@@ -9176,3 +9176,167 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Projets : aperçu du projet dans la bande colorée ─────── */
+.pvc-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.35s ease, transform 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.pvc-preview--top { object-position: top center; }
+.pvc-preview--mid { object-position: center 42%; }
+
+.pvc-banner > .pvc-logo-banner,
+.pvc-banner > .pvc-logo-belavi,
+.pvc-banner > .pvc-initial,
+.pvc-banner > .pvc-number {
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.pvc-banner > .pvc-logo-banner,
+.pvc-banner > .pvc-logo-belavi,
+.pvc-banner > .pvc-initial {
+  position: relative;
+}
+
+@media (hover: hover) {
+  .project-visual-card:hover .pvc-preview,
+  .project-visual-card:focus-within .pvc-preview {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .project-visual-card:hover .pvc-preview ~ .pvc-logo-banner,
+  .project-visual-card:hover .pvc-preview ~ .pvc-logo-belavi,
+  .project-visual-card:focus-within .pvc-preview ~ .pvc-logo-banner,
+  .project-visual-card:focus-within .pvc-preview ~ .pvc-logo-belavi {
+    opacity: 0;
+  }
+  .project-visual-card:hover .pvc-banner:has(.pvc-preview) .pvc-number,
+  .project-visual-card:focus-within .pvc-banner:has(.pvc-preview) .pvc-number {
+    opacity: 0;
+  }
+}
+
+/* Écrans tactiles : pas de survol, l'aperçu est visible à droite du logo */
+@media (hover: none) {
+  .pvc-preview {
+    opacity: 1;
+    transform: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 30%, #000 75%);
+    mask-image: linear-gradient(to right, transparent 30%, #000 75%);
+  }
+  .pvc-banner:has(.pvc-preview) .pvc-number {
+    opacity: 0;
+  }
+}
+
+/* ── Contact : bouton « Copier l'adresse » ─────────────────── */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 92, 74, 0.3);
+  background: rgba(53, 92, 74, 0.06);
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.copy-btn:hover {
+  background: rgba(53, 92, 74, 0.12);
+  border-color: rgba(53, 92, 74, 0.5);
+}
+.copy-btn:active { transform: scale(0.97); }
+.copy-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.copy-btn.is-copied {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+body.dark .copy-btn {
+  color: #7ec8a0;
+  border-color: rgba(126, 200, 160, 0.35);
+  background: rgba(126, 200, 160, 0.08);
+}
+body.dark .copy-btn.is-copied {
+  background: #7ec8a0;
+  border-color: #7ec8a0;
+  color: #10231a;
+}
+
+/* ── Téléphone : premier écran plus court ──────────────────── */
+@media (max-width: 640px) {
+  /* Accueil : le bouton « Me contacter » visible sans défiler */
+  .home-studio-hero { padding: 16px; }
+  .home-studio-hero .studio-copy { padding: 14px; }
+  .home-studio-hero .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .home-studio-hero .availability-pill {
+    margin: 0;
+    padding: 6px 11px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+  .home-studio-hero h1.hero-title {
+    font-size: 1.85rem;
+    line-height: 1.12;
+  }
+  .home-studio-hero .studio-subtitle {
+    margin: 10px 0 12px;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  .home-studio-hero #message {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+  .home-studio-hero .hero-actions {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .home-studio-hero .hero-actions .cta-button {
+    flex: 1 1 130px;
+    padding-left: 14px;
+    padding-right: 14px;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Intros de pages : un titre et une phrase, le contenu arrive plus vite */
+  .carte.page-hero { padding: 26px 20px; }
+  .carte.page-hero h1.hero-title { margin-bottom: 12px; }
+  .carte.page-hero #message {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  .carte.page-hero .page-hero-secondary { display: none; }
+  .carte.page-hero .hero-actions { margin-top: 18px; }
+}
