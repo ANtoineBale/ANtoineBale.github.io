@@ -2078,6 +2078,17 @@ body.dark .post-card--featured {
   flex-wrap: wrap;
 }
 
+/* L'étiquette et la date sur la même ligne : sans la marge du bas de .section-label */
+.post-compact-meta .section-label,
+.post-compact-meta .post-date {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.page-hero .post-compact-meta {
+  justify-content: center;
+}
+
 .post-card--compact h3 {
   font-size: 1rem;
   line-height: 1.35;
