@@ -9088,3 +9088,79 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
 .post-card .feature-link::after {
   content: none;
 }
+
+/* ── Belavi : note des chiffres, vidéo, langues, simulateur ── */
+.stats-note {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.belavi-video {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.belavi-video video {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  border-radius: 22px;
+  background: #111;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+}
+
+.belavi-demo-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-top: 22px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: var(--soft-box);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.belavi-demo-cta p {
+  margin: 0;
+  flex: 1 1 240px;
+}
+
+.belavi-langues,
+.belavi-simulateur {
+  margin: 28px 0 0;
+}
+
+.belavi-langues-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.belavi-langues-grid img,
+.belavi-simulateur img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
+}
+
+.belavi-langues figcaption,
+.belavi-simulateur figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .belavi-langues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

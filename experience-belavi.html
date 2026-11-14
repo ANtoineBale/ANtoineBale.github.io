@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="Livret d'accueil digital pour hôtes et conciergeries, généré par l'IA. Projet porté seul, de l'idée au SaaS en ligne.">
   <title>Belavi — Concevoir et lancer un SaaS avec l'IA · Antoine Balesi</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261025b">
+  <link rel="stylesheet" href="style.css?v=20261114a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -106,14 +106,16 @@
       <p>
         Les outils qui existent sont souvent en anglais et demandent de tout saisir &agrave; la main.
         L&rsquo;id&eacute;e de Belavi&nbsp;: partir de ce que l&rsquo;h&ocirc;te a d&eacute;j&agrave; &eacute;crit &mdash; son annonce &mdash;
-        et laisser l&rsquo;IA faire le gros du travail, avec une interface simple, en fran&ccedil;ais,
-        pens&eacute;e pour des h&ocirc;tes et des conciergeries qui ne sont pas techniques.
+        et laisser l&rsquo;IA faire le gros du travail, avec une interface simple, d&rsquo;abord en fran&ccedil;ais,
+        pens&eacute;e pour des h&ocirc;tes et des conciergeries qui ne sont pas techniques. Depuis, le livret
+        lui-m&ecirc;me se lit en cinq langues, pour les voyageurs qui n&rsquo;ont pas le fran&ccedil;ais.
       </p>
     </section>
 
     <section class="carte scroll-reveal">
       <span class="experience-kicker">Chiffres cl&eacute;s</span>
       <h2>Le projet en bref</h2>
+      <p class="stats-note">Chiffres relev&eacute;s au 14&nbsp;novembre 2026.</p>
       <div class="stats-grid">
         <article class="stat-card">
           <p class="stat-number">13&nbsp;j</p>
@@ -126,10 +128,46 @@
           <p class="stat-copy">Environ 0,01&nbsp;$ par g&eacute;n&eacute;ration, mesur&eacute; sur une vraie annonce&nbsp;: un co&ucirc;t ma&icirc;tris&eacute;.</p>
         </article>
         <article class="stat-card">
-          <p class="stat-number">3</p>
-          <p class="stat-label">Th&egrave;mes, 2 langues</p>
-          <p class="stat-copy">Provence, bord de mer, urbain&nbsp;; livret en fran&ccedil;ais et en anglais, lisible m&ecirc;me sans r&eacute;seau.</p>
+          <p class="stat-number">5</p>
+          <p class="stat-label">Langues du livret</p>
+          <p class="stat-copy">Fran&ccedil;ais, anglais, espagnol, italien, allemand&nbsp;: traduit automatiquement apr&egrave;s publication, lisible sans r&eacute;seau.</p>
         </article>
+        <article class="stat-card">
+          <p class="stat-number">8</p>
+          <p class="stat-label">Livrets de d&eacute;monstration</p>
+          <p class="stat-copy">Du chalet &agrave; la villa, chacun avec sa propre ambiance et ses traductions.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-number">311</p>
+          <p class="stat-label">Tests automatiques</p>
+          <p class="stat-copy">Rejou&eacute;s &agrave; chaque modification pour &eacute;viter qu&rsquo;un correctif en casse un autre.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-number">26</p>
+          <p class="stat-label">Pages publiques</p>
+          <p class="stat-copy">Accueil, tarifs, d&eacute;mo, blog, pages l&eacute;gales&nbsp;: toutes v&eacute;rifi&eacute;es avant la prospection.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="carte scroll-reveal">
+      <span class="experience-kicker">En action</span>
+      <h2>Voir Belavi en 37&nbsp;secondes</h2>
+      <p>
+        Un vrai enregistrement du site&nbsp;: l&rsquo;annonce est coll&eacute;e, le livret est g&eacute;n&eacute;r&eacute;,
+        puis consult&eacute; sur t&eacute;l&eacute;phone. Sans son.
+      </p>
+      <div class="belavi-video">
+        <video controls muted playsinline preload="none" poster="images/belavi/belavi-demo-affiche.webp"
+               aria-label="D&eacute;monstration de Belavi : de l&rsquo;annonce au livret en quelques secondes">
+          <source src="videos/demo-belavi.mp4" type="video/mp4">
+          Votre navigateur ne lit pas la vid&eacute;o.
+          <a href="https://www.belavi.fr/demo" target="_blank" rel="noreferrer">Voir la d&eacute;mo sur belavi.fr</a>.
+        </video>
+      </div>
+      <div class="belavi-demo-cta">
+        <p><strong>Envie de l&rsquo;essayer&nbsp;?</strong> Ouvrez un livret d&rsquo;exemple et changez de langue en haut de l&rsquo;&eacute;cran.</p>
+        <a href="https://www.belavi.fr/l/demo-mas-oliviers" class="cta-button" target="_blank" rel="noreferrer" aria-label="Ouvrir le livret d&rsquo;exemple Mas des Oliviers (nouvelle fen&ecirc;tre)">Ouvrir un livret d&rsquo;exemple &rarr;</a>
       </div>
     </section>
 
@@ -162,12 +200,27 @@
             un changement de th&egrave;me qui ne touche jamais au contenu.
           </p>
           <p>
-            Le livret est disponible en fran&ccedil;ais et en anglais selon la langue du t&eacute;l&eacute;phone,
-            reste consultable sans connexion une fois ouvert, et peut &ecirc;tre gard&eacute; sur l&rsquo;&eacute;cran d&rsquo;accueil.
+            Le livret est disponible en cinq langues (fran&ccedil;ais, anglais, espagnol, italien, allemand) et s&rsquo;ouvre
+            dans celle du t&eacute;l&eacute;phone. Les traductions sont faites automatiquement apr&egrave;s la publication, puis mises
+            &agrave; jour quand l&rsquo;h&ocirc;te modifie son texte.
+          </p>
+          <p>
+            Il reste consultable sans connexion une fois ouvert, et peut &ecirc;tre gard&eacute; sur l&rsquo;&eacute;cran d&rsquo;accueil
+            avec l&rsquo;ic&ocirc;ne du logement.
           </p>
         </div>
         <img src="images/belavi/belavi-livret-mas.jpg" alt="Livret d&rsquo;exemple Mas des Oliviers affich&eacute; sur mobile" class="detail-img detail-img--portrait" loading="lazy" width="600" height="1200">
       </div>
+
+      <figure class="belavi-langues">
+        <div class="belavi-langues-grid">
+          <img src="images/belavi/belavi-livret-fr.jpg" alt="Livret Mas des Oliviers en fran&ccedil;ais" loading="lazy" width="780" height="1688">
+          <img src="images/belavi/belavi-livret-en.jpg" alt="Livret Mas des Oliviers en anglais" loading="lazy" width="780" height="1688">
+          <img src="images/belavi/belavi-livret-es.jpg" alt="Livret Mas des Oliviers en espagnol" loading="lazy" width="780" height="1688">
+          <img src="images/belavi/belavi-livret-de.jpg" alt="Livret Mas des Oliviers en allemand" loading="lazy" width="780" height="1688">
+        </div>
+        <figcaption>Le m&ecirc;me livret en fran&ccedil;ais, anglais, espagnol et allemand (l&rsquo;italien est aussi disponible).</figcaption>
+      </figure>
 
       <div class="detail-section">
         <div class="detail-section-text">
@@ -189,9 +242,11 @@
         <div class="detail-section-text">
           <h3>Mod&egrave;le &eacute;conomique <span class="amp">&amp;</span> conformit&eacute;</h3>
           <p>
-            Construction de l&rsquo;offre&nbsp;: essai gratuit de 30 jours sans carte bancaire, offre H&ocirc;te &agrave;
-            7&nbsp;&euro; par mois et par logement (70&nbsp;&euro; &agrave; l&rsquo;ann&eacute;e), forfaits sur devis pour les
-            conciergeries, et un livret &laquo;&nbsp;cl&eacute; en main&nbsp;&raquo; r&eacute;alis&eacute; via Studio Balesi.
+            Construction de l&rsquo;offre&nbsp;: essai gratuit de 30 jours sans carte bancaire, puis 7&nbsp;&euro; par mois
+            et par logement (70&nbsp;&euro; &agrave; l&rsquo;ann&eacute;e). Pour les conciergeries, une grille d&eacute;gressive avec
+            des forfaits plafonn&eacute;s (par exemple 50&nbsp;&euro; de 8 &agrave; 10 logements), un simulateur de tarif sur la
+            page Tarifs, la marque blanche et un mode pilote. Un livret &laquo;&nbsp;cl&eacute; en main&nbsp;&raquo; reste
+            r&eacute;alisable via Studio Balesi.
           </p>
           <p>
             Paiement et abonnements avec Stripe, calcul des co&ucirc;ts et du seuil de rentabilit&eacute;, puis
@@ -199,8 +254,13 @@
             d&rsquo;utilisation et conditions g&eacute;n&eacute;rales de vente.
           </p>
         </div>
-        <img src="images/belavi/belavi-tarifs.jpg" alt="Page Tarifs de belavi.fr avec les quatre offres" class="detail-img" loading="lazy" width="1440" height="900">
+        <img src="images/belavi/belavi-tarifs.jpg" alt="Page Tarifs de belavi.fr avec les offres H&ocirc;te et Conciergerie" class="detail-img" loading="lazy" width="1440" height="900">
       </div>
+
+      <figure class="belavi-simulateur">
+        <img src="images/belavi/belavi-simulateur.jpg" alt="Simulateur de tarif de belavi.fr : choix du nombre de logements et prix mensuel ou annuel" loading="lazy" width="1104" height="339">
+        <figcaption>Le simulateur de la page Tarifs&nbsp;: le prix se calcule selon le nombre de logements, avec les paliers plafonn&eacute;s en jaune.</figcaption>
+      </figure>
 
       <div class="detail-section detail-section--full">
         <div class="detail-section-text">
@@ -270,7 +330,8 @@
         autant du droit et de la gestion que du code.
       </p>
       <p>
-        Le produit est en ligne et pr&ecirc;t &agrave; encaisser. La suite est commerciale&nbsp;: faire tester Belavi
+        Le produit est en ligne et pr&ecirc;t &agrave; encaisser, avec un livret en cinq langues, des tarifs adapt&eacute;s
+        aux conciergeries et une vid&eacute;o de d&eacute;monstration. La suite est commerciale&nbsp;: faire tester Belavi
         &agrave; des h&ocirc;tes et convaincre les premi&egrave;res conciergeries, en parall&egrave;le de mon Mast&egrave;re
         et de ma recherche de stage ou d&rsquo;alternance.
       </p>
