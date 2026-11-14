@@ -5180,8 +5180,8 @@ body.dark .ab-italic { color: #c79a3f; }
   padding: 0;
   cursor: pointer;
   perspective: 1400px;
-  width: 280px;
-  height: 360px;
+  width: 300px;
+  height: 460px;
   display: block;
 }
 .ab-portrait-inner {
@@ -5227,8 +5227,8 @@ body.dark .ab-italic { color: #c79a3f; }
 .ab-portrait-card--back {
   transform: rotateY(180deg);
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 32px 28px 24px;
+  justify-content: center;
+  padding: 30px 32px 34px;
   align-items: stretch;
   text-align: left;
 }
@@ -5267,7 +5267,7 @@ body.dark .ab-portrait-mono {
   top: auto;
   right: auto;
   align-self: flex-start;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   text-transform: uppercase;
   font-size: 0.68rem;
   letter-spacing: 0.16em;
@@ -5309,13 +5309,13 @@ body.dark .ab-portrait-flip-hint {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 .ab-id-row {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding-bottom: 10px;
+  padding-bottom: 9px;
   border-bottom: 1px solid rgba(244, 240, 232, 0.12);
 }
 .ab-id-row:last-child { border-bottom: none; padding-bottom: 0; }
@@ -5906,7 +5906,8 @@ body.dark .author-bio-links a { color: #88c9a1; }
     text-align: center;
   }
   .ab-hero-portrait { order: -1; }
-  .ab-portrait-card { width: 220px; height: 280px; }
+  .ab-portrait-flipper { width: 270px; height: 450px; margin: 0 auto; }
+  .ab-portrait-card--back { padding: 26px 26px 30px; }
   .ab-portrait-mono { font-size: 4.6rem; }
   .ab-conv-grid {
     grid-template-columns: 1fr;
