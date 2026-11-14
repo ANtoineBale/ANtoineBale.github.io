@@ -8668,7 +8668,7 @@ body.dark .scroll-progress {
 }
 
 /* =========================================================
-   Studio Balesi â€” carte projet + select du formulaire de contact
+   Horizon Digital â€” carte projet + select du formulaire de contact
    ========================================================= */
 .pvc-banner--studio {
   background: linear-gradient(135deg, #0a1226 0%, #16213e 45%, #1668c9 100%);
@@ -9245,7 +9245,7 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
   }
 }
 
-/* Page très longue (Studio Balesi) : défilement plus lent */
+/* Page très longue (Horizon Digital) : défilement plus lent */
 @media (hover: hover) {
   .project-visual-card:hover .pvc-preview--long,
   .project-visual-card:focus-within .pvc-preview--long {
@@ -9378,3 +9378,137 @@ body.dark .copy-btn.is-copied {
   .carte.page-hero .page-hero-secondary { display: none; }
   .carte.page-hero .hero-actions { margin-top: 18px; }
 }
+
+/* ── Écrans tactiles : zones de clic d'au moins 44 px ───────── */
+@media (pointer: coarse) {
+  .brand-link,
+  .breadcrumb a,
+  .skill-proof-link,
+  .detail-link,
+  .cv-item-link,
+  .cv-contact a,
+  .author-bio-links a,
+  .footer-nav a,
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .skill-proof-item { display: flex; }
+  .breadcrumb a { padding-right: 4px; }
+  .footer-nav a { padding: 0 8px; }
+  .footer-links a { gap: 6px; padding: 0 6px; }
+  .author-bio-links a { padding-right: 6px; }
+}
+
+/* ── Accueil : lien vers le dernier projet (Belavi) ──────────── */
+.hero-latest {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 92, 74, 0.22);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.hero-latest:hover {
+  border-color: rgba(183, 121, 79, 0.7);
+  background: #fff;
+  transform: translateY(-2px);
+}
+.hero-latest:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.hero-latest-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(183, 121, 79, 0.14);
+  color: #8a4f2a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+body.dark .hero-latest {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(126, 200, 160, 0.3);
+}
+body.dark .hero-latest:hover { background: rgba(255, 255, 255, 0.12); }
+body.dark .hero-latest-tag { background: rgba(199, 154, 63, 0.2); color: #e2bd6e; }
+
+@media (max-width: 640px) {
+  .home-studio-hero .hero-latest {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    min-height: 44px;
+    gap: 6px;
+  }
+}
+
+/* ── Sommaire des longs articles ─────────────────────────────── */
+article h3[id] { scroll-margin-top: 110px; }
+
+.toc-card {
+  margin-top: 18px;
+  padding: 14px 22px;
+}
+.toc-card summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  list-style: none;
+}
+.toc-card summary::-webkit-details-marker { display: none; }
+.toc-card summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.toc-card[open] summary::after { transform: rotate(45deg); }
+.toc-card summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+.toc-card ol {
+  margin: 4px 0 6px;
+  padding-left: 30px;
+  display: grid;
+  gap: 2px;
+}
+.toc-card li::marker { color: var(--muted); font-weight: 700; }
+.toc-card a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 2px 10px;
+  margin-left: 0;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.toc-card a:hover { background: rgba(53, 92, 74, 0.08); color: var(--accent); }
+.toc-card a.is-current {
+  border-left-color: var(--accent);
+  background: rgba(53, 92, 74, 0.1);
+  color: var(--accent);
+  font-weight: 700;
+}
+body.dark .toc-card summary,
+body.dark .toc-card a.is-current,
+body.dark .toc-card a:hover { color: #7ec8a0; }
+body.dark .toc-card a.is-current { border-left-color: #7ec8a0; background: rgba(126, 200, 160, 0.12); }
+@media (pointer: coarse) { .toc-card a { min-height: 44px; } }

@@ -687,3 +687,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 }());
+
+// Sommaire des longs articles : généré à partir des titres h3, avec repère de la section en cours
+(function () {
+  var article = document.querySelector('body[data-page="blog"] main article');
+  if (!article) return;
+  var titres = Array.prototype.slice.call(article.querySelectorAll("section.carte > h3"));
+  if (titres.length < 5) return;
+  var hero = document.querySelector("main .page-hero");
+  if (!hero) return;
+
+  function slug(texte, i) {
+    var s = texte.toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+    return "section-" + (i + 1) + (s ? "-" + s : "");
+  }
+
+  var details = document.createElement("details");
+  details.className = "carte toc-card";
+  if (window.matchMedia("(min-width: 900px)").matches) details.open = true;
+  var summary = document.createElement("summary");
+  summary.textContent = "Sommaire de l’article (" + titres.length + " parties)";
+  details.appendChild(summary);
+
+  var nav = document.createElement("nav");
+  nav.setAttribute("aria-label", "Sommaire de l’article");
+  var liste = document.createElement("ol");
+  var liens = [];
+
+  titres.forEach(function (h, i) {
+    if (!h.id) h.id = slug(h.textContent, i);
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.href = "#" + h.id;
+    a.textContent = h.textContent.replace(/\s+/g, " ").trim();
+    li.appendChild(a);
+    liste.appendChild(li);
+    liens.push(a);
+  });
+  nav.appendChild(liste);
+  details.appendChild(nav);
+  hero.parentNode.insertBefore(details, hero.nextSibling);
+
+  if (!("IntersectionObserver" in window)) return;
+  var visibles = {};
+  var observer = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) { visibles[e.target.id] = e.isIntersecting; });
+    var courant = null;
+    for (var i = 0; i < titres.length; i++) {
+      if (visibles[titres[i].id]) { courant = titres[i].id; break; }
+    }
+    if (!courant) return;
+    liens.forEach(function (a) {
+      var actif = a.getAttribute("href") === "#" + courant;
+      a.classList.toggle("is-current", actif);
+      if (actif) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+  }, { rootMargin: "-90px 0px -55% 0px" });
+  titres.forEach(function (h) { observer.observe(h); });
+}());
