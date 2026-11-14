@@ -9208,10 +9208,27 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
 }
 
 @media (hover: hover) {
+  /* Bandeau plus haut quand il a un aperçu, pour mieux voir le site */
+  .pvc-banner:has(.pvc-preview) { height: 160px; }
+
+  /* L'image garde ses proportions et défile de haut en bas au survol */
+  .pvc-preview {
+    inset: auto;
+    top: 0;
+    left: 0;
+    height: auto;
+    object-fit: initial;
+    object-position: initial;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, top 0.5s ease, transform 0.5s ease;
+  }
+
   .project-visual-card:hover .pvc-preview,
   .project-visual-card:focus-within .pvc-preview {
     opacity: 1;
-    transform: scale(1);
+    top: 100%;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, top 5s ease-in-out 0.4s, transform 5s ease-in-out 0.4s;
   }
   .project-visual-card:hover .pvc-preview ~ .pvc-logo-banner,
   .project-visual-card:hover .pvc-preview ~ .pvc-logo-belavi,
@@ -9222,6 +9239,16 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
   .project-visual-card:hover .pvc-banner:has(.pvc-preview) .pvc-number,
   .project-visual-card:focus-within .pvc-banner:has(.pvc-preview) .pvc-number {
     opacity: 0;
+  }
+}
+
+/* Mouvement réduit : pas de défilement, l'image est simplement affichée en haut */
+@media (hover: hover) and (prefers-reduced-motion: reduce) {
+  .project-visual-card:hover .pvc-preview,
+  .project-visual-card:focus-within .pvc-preview {
+    top: 0;
+    transform: none;
+    transition: opacity 0.3s ease;
   }
 }
 
