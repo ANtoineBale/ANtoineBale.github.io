@@ -9191,7 +9191,8 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
   pointer-events: none;
   z-index: 0;
 }
-.pvc-preview--top { object-position: top center; }
+.pvc-preview--top,
+.pvc-preview--long { object-position: top center; }
 .pvc-preview--mid { object-position: center 42%; }
 
 .pvc-banner > .pvc-logo-banner,
@@ -9230,6 +9231,8 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
     transform: translateY(-100%);
     transition: opacity 0.3s ease, top 5s ease-in-out 0.4s, transform 5s ease-in-out 0.4s;
   }
+  .project-visual-card:hover .pvc-preview ~ .pvc-initial,
+  .project-visual-card:focus-within .pvc-preview ~ .pvc-initial,
   .project-visual-card:hover .pvc-preview ~ .pvc-logo-banner,
   .project-visual-card:hover .pvc-preview ~ .pvc-logo-belavi,
   .project-visual-card:focus-within .pvc-preview ~ .pvc-logo-banner,
@@ -9239,6 +9242,14 @@ body[data-page="experiences"] .exp-toc-grid > li:nth-child(6) { --toc-color: #6b
   .project-visual-card:hover .pvc-banner:has(.pvc-preview) .pvc-number,
   .project-visual-card:focus-within .pvc-banner:has(.pvc-preview) .pvc-number {
     opacity: 0;
+  }
+}
+
+/* Page très longue (Studio Balesi) : défilement plus lent */
+@media (hover: hover) {
+  .project-visual-card:hover .pvc-preview--long,
+  .project-visual-card:focus-within .pvc-preview--long {
+    transition: opacity 0.3s ease, top 11s ease-in-out 0.4s, transform 11s ease-in-out 0.4s;
   }
 }
 
