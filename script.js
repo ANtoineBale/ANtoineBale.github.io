@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.dataset.originalText = submitBtn.textContent;
         submitBtn.textContent = "Envoi en cours…";
       }
+      confirmation.className = "";
       confirmation.innerHTML = "";
 
       fetch("https://formsubmit.co/ajax/antoinebalesi@gmail.com", {
@@ -249,13 +250,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (data) {
           if (!data || String(data.success) !== "true") throw new Error("Envoi refusé");
+          confirmation.className = "is-success";
           confirmation.innerHTML =
-            "Merci " +
-            displayName +
-            " ! Votre message a bien été envoyé — réponse sous 24 h en semaine.";
+            '<svg class="confirmation-check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>' +
+            "<span><strong>Merci " + displayName.replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }) + " !</strong> Votre message a bien été envoyé — réponse sous 24 h en semaine.</span>";
           contactForm.reset();
+          try { confirmation.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
         })
         .catch(function () {
+          confirmation.className = "is-error";
           confirmation.innerHTML =
             "Une erreur est survenue. Vous pouvez écrire directement à " +
             "<a href=\"mailto:antoinebalesi@gmail.com\">antoinebalesi@gmail.com</a>.";
